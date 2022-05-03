@@ -7,7 +7,7 @@ import LoadingList from './LoadingList'
 import RepoItem from './RepoItem';
 
 const RepoList = () => {
-    const [list, setList] = useState<JSX.Element[]>([<LoadingList />]);
+    const [list, setList] = useState<JSX.Element[]>([<LoadingList key="rp_list_placeholder"/>]);
     const [listPromise, setListPromise] = useState<Promise<AxiosResponse<PulpCoreClient.PaginatedRepositoryResponseList>>>();
 
     useEffect(() => {
