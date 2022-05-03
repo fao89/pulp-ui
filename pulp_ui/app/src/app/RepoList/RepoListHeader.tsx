@@ -4,7 +4,7 @@ import { Button, Card, CardHeader, CardBody, Divider } from '@patternfly/react-c
 
 const RepoListHeader = () => {
     
-    return <div className='repolist-header-box'>
+    return <div>
         <Card className='card'>
             <CardHeader className="space-between-container">
                 <h1 className="page-header">Available Repositories</h1>
