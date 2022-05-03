@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
 import * as PulpCoreClient from '@app/pulpcore-client';
 
+import RepoListHeader from './RepoListHeader'
 import RepoItem from './RepoItem';
 
 const RepoList = () => {
@@ -28,6 +29,7 @@ const RepoList = () => {
     }, [listPromise]);
     
     return <div>
+        <RepoListHeader />
         {list}
     </div>
 }
