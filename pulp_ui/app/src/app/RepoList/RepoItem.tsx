@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import { AxiosResponse } from 'axios';
 import * as PulpRPMClient from '@app/pulp_rpm-client';
 import { Button, Card, CardHeader, CardBody, Divider } from '@patternfly/react-core';
@@ -44,7 +45,8 @@ const RepoItem = (props) => {
         <Card isHoverable className='card'>
             <CardHeader>
                 {props.name && 
-                    <Button variant='link'>
+                    <Button variant='link' component={
+                        (props: any) => <Link {...props} to='/ViewRepo'/>}>
                         <h1 className='card-header'>{props.name}</h1>
                     </Button>
                 }

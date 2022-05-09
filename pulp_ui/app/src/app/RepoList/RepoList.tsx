@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
 import * as PulpCoreClient from '@app/pulpcore-client';
 
+import RepoListHeader from './RepoListHeader'
+import LoadingList from './LoadingList'
 import RepoItem from './RepoItem';
 
 const RepoList = () => {
-    const [list, setList] = useState<JSX.Element[]>([<p key="rp_list_placeholder">Loading repository list...</p>]);
+    const [list, setList] = useState<JSX.Element[]>([<LoadingList key="rp_list_placeholder"/>]);
     const [listPromise, setListPromise] = useState<Promise<AxiosResponse<PulpCoreClient.PaginatedRepositoryResponseList>>>();
 
     useEffect(() => {
@@ -28,6 +30,7 @@ const RepoList = () => {
     }, [listPromise]);
     
     return <div>
+        <RepoListHeader />
         {list}
     </div>
 }
